@@ -1,22 +1,31 @@
 package kyh.datorkommunikation.LabbTvå;
 
-import org.eclipse.paho.client.mqttv3.MqttClient;
-import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
-import org.eclipse.paho.client.mqttv3.MqttException;
-import org.eclipse.paho.client.mqttv3.MqttMessage;
-import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
-
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class Main {
 
     public static void main(String[] args) {
-        String topic        = "KYH20";
-        String content      = "Message from MqttPublishSample";
+
+        Timer myTimer = new Timer();
+        TimerTask myTask = new TimerTask () {
+            @Override
+            public void run () {
+                TempSensor newTemp = new TempSensor();
+            }
+        };
+
+        myTimer.scheduleAtFixedRate(myTask , 0l, 10 * (1000)); // Runs every 5 mins
+    }
+}
+
+
+        /*
+        String topic        = "dev/test";
+        String content      = "Message from Java";
         int qos             = 2;
-        String broker       = "tcp://mqtt.eclipse.org:1883";
-        String clientId     = "TPSample";
+        String broker       = "tcp://broker.hivemq.com:1883";
+        String clientId     = "fooasdfjjw";
         MemoryPersistence persistence = new MemoryPersistence();
 
         try {
@@ -32,8 +41,6 @@ public class Main {
             message.setQos(qos);
             sampleClient.publish(topic, message);
             System.out.println("Message published");
-
-
             sampleClient.disconnect();
             System.out.println("Disconnected");
             System.exit(0);
@@ -45,23 +52,10 @@ public class Main {
             System.out.println("excep "+me);
             me.printStackTrace();
         }
-
-
-/*
-        Timer myTimer = new Timer();
-        TimerTask myTask = new TimerTask () {
-            @Override
-            public void run () {
-                TempSensor newTemp = new TempSensor();
-                int temp = newTemp.getRandomNumber(25, 15);
-                System.out.println(temp);
-            }
-        };
-
-        myTimer.scheduleAtFixedRate(myTask , 0l, 60 * (1000)); // Runs every 5 mins
-
- */
     }
 
 
-}
+
+
+
+ */
