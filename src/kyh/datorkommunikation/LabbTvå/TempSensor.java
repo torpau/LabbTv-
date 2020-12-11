@@ -12,10 +12,10 @@ import java.util.TimerTask;
 public class TempSensor {
 
     TempSensor() {
-        String topic = "filten";
+        String topic = "Filten/TempSensor";
         String content = "" + getRandomNumber(25, 15);
         int qos = 2;
-        String broker = "tcp://broker.hivemq.com:8000";
+        String broker = "tcp://broker.hivemq.com:1883";
         String clientId = "TempSensor";
         MemoryPersistence persistence = new MemoryPersistence();
 
@@ -27,6 +27,7 @@ public class TempSensor {
             MqttMessage message = new MqttMessage(content.getBytes());
             message.setQos(qos);
             sampleClient.publish(topic, message);
+            System.out.println(message);
             sampleClient.disconnect();
         } catch (MqttException me) {
             System.out.println("reason " + me.getReasonCode());
@@ -35,10 +36,14 @@ public class TempSensor {
             System.out.println("cause " + me.getCause());
             System.out.println("except " + me);
             me.printStackTrace();
+
         }
+
     }
+
 
     public int getRandomNumber(int high, int low){
         return (int) (Math.random() * (high - low)) + low;
     }
+
 }
