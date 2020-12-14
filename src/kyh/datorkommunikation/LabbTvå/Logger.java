@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public abstract class Logger implements MqttCallback {
-
+//test
     static String topic = "Filten";
     static int qos = 2;
     static String broker = "tcp://broker.hivemq.com:1883";
