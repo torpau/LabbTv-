@@ -6,9 +6,6 @@ import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
 public class TempSensor {
 
     TempSensor() {

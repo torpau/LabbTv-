@@ -2,19 +2,17 @@ package kyh.datorkommunikation.LabbTvå;
 
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
-
-import java.io.FileWriter;
+import java.io.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public abstract class Logger implements MqttCallback {
-//test
+
     static String topic = "Filten";
     static int qos = 2;
     static String broker = "tcp://broker.hivemq.com:1883";
     static String clientId = "Logger";
     static MemoryPersistence persistence = new MemoryPersistence();
-
     static MqttClient sampleClient;
 
     public static void subscribeToMessage(){
@@ -33,8 +31,6 @@ public abstract class Logger implements MqttCallback {
                 public void messageArrived(String s, MqttMessage mqttMessage) throws Exception {
                     LocalDateTime dateTime = LocalDateTime.now();
                     DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-
-
                     writeFile(dateTime.format(format), s, mqttMessage.toString());
                 }
 
@@ -43,8 +39,6 @@ public abstract class Logger implements MqttCallback {
             });
             sampleClient.subscribe("Filten/TempSensor");
             sampleClient.subscribe("Filten/Controller");
-
-
 
         } catch (MqttException me) {
             System.out.println("reason " + me.getReasonCode());
@@ -57,18 +51,20 @@ public abstract class Logger implements MqttCallback {
         }
 
     }
-
-
-
-
     public static void main(String[] args) {
         subscribeToMessage();
     }
 
-    public static void writeFile(String date,String source, String value){
+    public static void writeFile(String date,String source, String value) throws IOException {
         System.out.println(date+" " + source +" "+ value);
-        //        String testString = sampleClient.subscribe();
-      //  FileWriter fw = new FileWriter(message);
+        Writer output = new BufferedWriter(new FileWriter("logg.txt",true));
+        try{
+            output.write(">>> "+date+ ", " + source +", " + value + " <<<\n");
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            output.close();
+        }
     }
 }
 

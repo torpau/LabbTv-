@@ -59,7 +59,6 @@ public abstract class Controller implements MqttCallback {
         System.out.println(message+content);
     }
 
-
     public static void main(String[] args) {
         subscribeToMessage();
     }

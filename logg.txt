@@ -1,0 +1,10 @@
+>>> 14-12-2020 10:20:05, Filten/TempSensor, 23 <<<
+>>> 14-12-2020 10:20:05, Filten/Controller, - <<<
+>>> 14-12-2020 10:20:15, Filten/TempSensor, 16 <<<
+>>> 14-12-2020 10:20:15, Filten/Controller, + <<<
+>>> 14-12-2020 10:20:25, Filten/TempSensor, 23 <<<
+>>> 14-12-2020 10:20:25, Filten/Controller, - <<<
+>>> 14-12-2020 10:20:35, Filten/TempSensor, 22 <<<
+>>> 14-12-2020 10:20:35, Filten/Controller, - <<<
+>>> 14-12-2020 10:20:45, Filten/TempSensor, 16 <<<
+>>> 14-12-2020 10:20:45, Filten/Controller, + <<<
