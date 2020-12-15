@@ -37,8 +37,9 @@ public abstract class Logger implements MqttCallback {
                 @Override
                 public void deliveryComplete(IMqttDeliveryToken iMqttDeliveryToken) { }
             });
-            sampleClient.subscribe("Filten/TempSensor");
-            sampleClient.subscribe("Filten/Controller");
+            //sampleClient.subscribe("Filten/TempSensor");
+            //sampleClient.subscribe("Filten/Controller");
+            sampleClient.subscribe("Filten/#");
 
         } catch (MqttException me) {
             System.out.println("reason " + me.getReasonCode());

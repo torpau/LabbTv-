@@ -8,3 +8,15 @@
 >>> 14-12-2020 10:20:35, Filten/Controller, - <<<
 >>> 14-12-2020 10:20:45, Filten/TempSensor, 16 <<<
 >>> 14-12-2020 10:20:45, Filten/Controller, + <<<
+>>> 15-12-2020 09:17:46, Filten/TempSensor, 23 <<<
+>>> 15-12-2020 09:17:46, Filten/Controller, - <<<
+>>> 15-12-2020 09:18:46, Filten/TempSensor, 24 <<<
+>>> 15-12-2020 09:18:46, Filten/Controller, - <<<
+>>> 15-12-2020 09:19:46, Filten/TempSensor, 21 <<<
+>>> 15-12-2020 09:19:46, Filten/Controller, + <<<
+>>> 15-12-2020 09:20:46, Filten/TempSensor, 15 <<<
+>>> 15-12-2020 09:20:46, Filten/Controller, + <<<
+>>> 15-12-2020 09:21:46, Filten/TempSensor, 23 <<<
+>>> 15-12-2020 09:21:46, Filten/Controller, - <<<
+>>> 15-12-2020 09:22:46, Filten/TempSensor, 18 <<<
+>>> 15-12-2020 09:22:46, Filten/Controller, + <<<
